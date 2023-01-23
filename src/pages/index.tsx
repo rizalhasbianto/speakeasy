@@ -9,8 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
-  let { title, cats } = attributes;
-  console.log(title)
+  let { hero_title, hero_description } = attributes;
   return (
     <>
       <Head>
@@ -22,15 +21,8 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.description}>
         <article>
-          <h1>{title}</h1>
-          <ul>
-            {cats.map((cat, k) => (
-              <li key={k}>
-                <h2>{cat.name}</h2>
-                <p>{cat.description}</p>
-              </li>
-            ))}
-          </ul>
+          <h1>{hero_title}</h1>
+          <p>{hero_description}</p>
         </article>
         </div>
       </main>
