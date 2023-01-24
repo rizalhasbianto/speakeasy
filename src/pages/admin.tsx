@@ -1,16 +1,14 @@
-import dynamic from 'next/dynamic';
-import config from 'cms/config';
+export default function Home() {
 
-const CMS = dynamic(
-  () =>
-    import('netlify-cms-app').then((cms) => {
-      cms.init({ config });
-    }),
-  { ssr: false, loading: () => <p>Loading...</p> }
-);
+    return (
+      <>
+        <script src="https://unpkg.com/react@^16/umd/react.production.min.js"></script>
+        <script src="https://unpkg.com/react-dom@^16/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/netlify-cms-app/dist/netlify-cms-app.js"></script>
 
-const AdminPage: React.FC = () => {
-  return <CMS />;
-};
-
-export default AdminPage;
+        <script id="init">
+          NetlifyCmsApp.init();
+        </script>
+      </>
+    )
+  }

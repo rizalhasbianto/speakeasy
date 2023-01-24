@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 
-import  { attributes }  from '@content/pages/home.md';
+import  { attributes, react as HomeContent }  from '@content/pages/home.md';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +22,7 @@ export default function Home() {
         <div className={styles.description}>
         <article>
           <h1>{hero_title}</h1>
-          <p>{hero_description}</p>
+          <HomeContent />
         </article>
         </div>
       </main>

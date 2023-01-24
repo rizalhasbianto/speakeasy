@@ -100,6 +100,10 @@ a {
   text-decoration: none;
 }
 
+main {
+  min-height: calc( 100vh - 112px );
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
